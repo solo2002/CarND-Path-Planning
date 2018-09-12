@@ -310,26 +310,6 @@ int main() {
                 right_car = right_car || (check_car_s < car_s + 30 && check_car_s > car_s - 30);
               }
 
-              // if (d < (4 * (lane + 1)) && d > (lane * 4))
-              // {
-              //   double vx = sensor_fusion[i][3];
-              //   double vy = sensor_fusion[i][4];
-              //   double check_speed = sqrt(vx * vx + vy * vy);
-              //   double check_car_s = sensor_fusion[i][5];
-
-              //   check_car_s += ((double) prev_size * 0.02 * check_speed);
-              //   if ((check_car_s > car_s) && (check_car_s - car_s) < 30)
-              //   {
-              //     too_close = true;
-              //     // change lane, or slow down
-              //     // ref_vel = 29.5; // mph
-              //     if (lane > 0) 
-              //     { // use left lane
-              //       lane = 0;
-              //     }
-              //   }
-              // }
-
             }
 
             double acceleration = 0.224; // 5 meter/s
