@@ -88,15 +88,41 @@ The code complies without errors with ```cmake```. The ```CMakeLists.txt``` has 
 The car is able to drive more than 5 miles without any incidents.
 ![alt test](https://github.com/solo2002/CarND-Path-Planning/blob/master/img/mileage.png)
 
-The video is available at [here](https://youtu.be/K5eAXkJaPaM). In addition, the car doesn't drive faster than the speed limit. Also the car isn't driving much slower than speed limit unless obstructed by traffic. THe car's accelerations and jerks are not exceeded, and stays in its lane most of time except changing lanes.
+The full video is available at [here](https://youtu.be/K5eAXkJaPaM). In addition, the car doesn't drive faster than the speed limit. Also the car isn't driving much slower than speed limit unless obstructed by traffic. THe car's accelerations and jerks are not exceeded, and stays in its lane most of time except changing lanes.
 
 ### Relection
 
 The implementation of path planning algorithm is in the main.cpp under the src folder between line 262 to 442.
 
-#### 1. Detection cars
+#### 1. Detecting Cars
 
-Here sensoe fusion data and telemetry data are used to deteremine whether there are cars in front (and falling in certain range, such as 30 meters) of the target car, 
+Here sensoe fusion data and telemetry data are used to deteremine whether there are cars in the near front (no more than 30 meters) of the target car, cars in the near right, and cars in the near left (line 262 to 290). The program examines whether the car should accelerate, slow-down, keep the lane, change lane to left, or change lane to right based on 3 variables (from lane 291 to 345). 
+
+#### 2. Generating Path
+
+I am using the strategy (with a few improments) that is introduced in the project walkthrough and Q/A video. Basically, spline is used to generate the trajectory with the car coordinates and previous path points (from line 346 to 442, where a transformation of the map coordinates and car's own coordinates is implemented). First of all, the trajectory (which is showing as a green line in the video) is initialized with the target car position, and then the last 2 points of previous trajectory are used and combining with 3 points at farther distance. The total waypoints are set to 50. Here, the helper function, getXY() is used to generate 3 points which are evenly separated at 30 meters in front of car. Spline function is really helpful to generate a smooth trajectory. Moreover, the unused waypoints of the previous trajectory would be save to the current one to make the trajectory transforming smooothly. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
