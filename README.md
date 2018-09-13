@@ -85,9 +85,31 @@ The code complies without errors with ```cmake```. The ```CMakeLists.txt``` has 
 
 ### Valid Trajectories
 
-The car is able to drive 
+The car is able to drive more than 5 miles without any incidents.
+![alt test](https://github.com/solo2002/CarND-Path-Planning/blob/master/img/mileage.png)
 
-The video is available at [here](https://youtu.be/K5eAXkJaPaM)
+The video is available at [here](https://youtu.be/K5eAXkJaPaM). In addition, the car doesn't drive faster than the speed limit. Also the car isn't driving much slower than speed limit unless obstructed by traffic. THe car's accelerations and jerks are not exceeded, and stays in its lane most of time except changing lanes.
 
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+### Relection
+
+The implementation of path planning algorithm is in the main.cpp under the src folder between line 262 to 442.
+
+#### 1. Detection cars
+
+Here sensoe fusion data and telemetry data are used to deteremine whether there are cars in front (and falling in certain range, such as 30 meters) of the target car, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
